@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Consultor de TI</title>
+
+<style>
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0b1120;
+  color: #e5e7eb;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  background: rgba(2,6,23,0.9);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+/* HERO */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 40px;
+}
+
+header h1 { font-size: 3rem; }
+
+.btn {
+  padding: 12px 25px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 40px;
+  max-width: 1100px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+}
+
+/* FORM */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: none;
+}
+
+button {
+  padding: 12px;
+  background: #38bdf8;
+  border: none;
+  border-radius: 6px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #020617;
+}
+</style>
+
+</head>
+
+<body>
+
+<nav>
+  <div><strong>arannacharlesherivelton@gmail.com</strong></div>
+</nav>
+
+<header>
+  <h1>Consultor em Infraestrutura, Segurança e IA</h1>
+  <p>Transformo ambientes de TI em estruturas seguras e eficientes</p>
+  <a href="#contato" class="btn">Fale comigo</a>
+</header>
+
+<section class="section">
+  <h2>Serviços</h2>
+  <div class="cards">
+    <div class="card">Redes corporativas</div>
+    <div class="card">Segurança e firewall</div>
+    <div class="card">Cloud e servidores</div>
+    <div class="card">Automação com IA</div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Projetos</h2>
+  <div class="cards">
+    <div class="card">Servidor Linux seguro</div>
+    <div class="card">Backup automatizado</div>
+    <div class="card">Monitoramento inteligente</div>
+  </div>
+</section>
+
+<section class="section" id="contato">
+  <h2>Contato</h2>
+
+  <!-- FORMULÁRIO FUNCIONAL -->
+  <form action="https://formsubmit.co/seuemail@email.com" method="POST">
+    <input type="text" name="name" placeholder="Seu nome" required>
+    <input type="email" name="email" placeholder="Seu email" required>
+    <textarea name="message" placeholder="Sua mensagem" required></textarea>
+
+    <!-- CONFIG EXTRA -->
+    <input type="hidden" name="_captcha" value="false">
+    
+    <button type="submit">Enviar</button>
+  </form>
+
+</section>
+
+<footer>
+  © 2026 - Consultoria em TI
+</footer>
+
+<script>
+/* ANIMAÇÃO AO ROLAR */
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
